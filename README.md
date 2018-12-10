@@ -14,7 +14,7 @@ A Flutter application that demonstrate simple CRUD operations with Firebase clou
 
 Changes to the *android/build.gradle*:
 
-```
+```gradle
 buildscript {
         repositories {
             ...
@@ -29,7 +29,7 @@ buildscript {
 
 And then we have the *android/app/build.gradle*:
 
-```
+```gradle
 //bottom of file
 apply plugin: 'com.google.gms.google-services'
 ```
