@@ -1,7 +1,7 @@
 # Cricket Team
 [![Say Thanks!](https://img.shields.io/badge/Say%20Thanks-!-1EAEDB.svg)](https://saythanks.io/to/ibhavikmakwana) 
 
-A Flutter application that demonstarte simple CRUD operations with Firebase cloud database.
+A Flutter application that demonstrate simple CRUD operations with Firebase cloud database.
 
 ## Add Firebase to your app
 
