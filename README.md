@@ -3,6 +3,17 @@
 
 A Flutter application that demonstrate simple CRUD operations with Firebase cloud database.
 
+# Preview
+
+| Home | Empty | Swipe |
+| ------------------ | --------------------------- | ------------------ |
+| <img src="./preview/list.jpg" height="400" alt="Screenshot"/>  | <img src="./preview/empty.jpg" height="400" alt="Screenshot"/> | <img src="./preview/swipe.jpg" height="400" alt="Screenshot"/> |
+
+| Add Player | Update Player |
+| ------------------ | --------------------------- |
+| <img src="./preview/add.jpg" height="400" alt="Screenshot"/>  | <img src="./preview/update.jpg" height="400" alt="Screenshot"/> |
+
+
 ## Add Firebase to your app
 
 1. Create a Firebase project. Check out the [Firebase](https://firebase.google.com/docs/flutter/setup) documentation for setting up the firebase in your flutter application.
