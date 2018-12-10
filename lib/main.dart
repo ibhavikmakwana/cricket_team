@@ -55,33 +55,42 @@ class _MyHomePageState extends State<MyHomePage> {
       stream: FireBaseAPI.playerStream,
       builder: (context, snapshot) {
         if (!snapshot.hasData) return LinearProgressIndicator();
-        return SingleChildScrollView(
-          physics: BouncingScrollPhysics(),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 16, right: 16, top: 16, bottom: 8),
-                child: Text(
-                  "Your Team",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 36,
+        if (snapshot.data.documents.length > 0) {
+          return SingleChildScrollView(
+            physics: BouncingScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 16, right: 16, top: 16, bottom: 8),
+                  child: Text(
+                    "Your Team",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 36,
+                    ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Text(
-                  "${snapshot.data.documents.length.toString()} Members",
-                  style: TextStyle(fontSize: 16),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                  child: Text(
+                    "${snapshot.data.documents.length.toString()} Members",
+                    style: TextStyle(fontSize: 16),
+                  ),
                 ),
-              ),
-              _buildPlayerList(context, snapshot.data.documents),
-            ],
-          ),
-        );
+                _buildPlayerList(context, snapshot.data.documents),
+              ],
+            ),
+          );
+        } else {
+          return Center(
+            child: Text(
+              "There is no player in the pitch.",
+              style: Theme.of(context).textTheme.title,
+            ),
+          );
+        }
       },
     );
   }
