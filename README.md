@@ -45,6 +45,43 @@ And then we have the *android/app/build.gradle*:
 apply plugin: 'com.google.gms.google-services'
 ```
 
+## iOS CocoaPods
+
+Google services use CocoaPods to install and manage dependencies. Open a terminal window and navigate to the location of the Xcode project for your app.
+
+1. Create a Podfile if you don't have one:
+
+```pod init```
+
+2. Open your Podfile and add:
+
+```pod 'Firebase/Core'```
+
+3. Save the file and run:
+
+```pod install```
+
+4. Add initialization code
+
+```
+import UIKit
+import Firebase // import the firebase
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+  var window: UIWindow?
+
+  func application(_ application: UIApplication,
+    didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?)
+    -> Bool {
+    FirebaseApp.configure() //configure the firebase
+    return true
+  }
+}
+```
+
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
